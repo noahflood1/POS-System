@@ -46,27 +46,27 @@ def mainWin(): #Defines UI in terms of a window with widgets
   #title Font
   title_font = Font(
       family="Helvetica",
-      size= 40,
+      size= 30,
       weight='bold'
       )
   
   #font fot menu label
   big_font = Font(
     family="Helvetica",
-    size=30,
+    size=25,
     weight='bold'
   )
 
   #font for buttons
   text_font = Font(
     family="Helvetica",
-    size=25,
+    size=22,
   )
 
   #font for the plain text within the program
   text_font_2 = Font(
     family='Helvetica',
-    size='25',
+    size=22,
     weight='bold'
   )
 
