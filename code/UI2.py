@@ -63,10 +63,10 @@ def mainWin(): #Defines UI in terms of a window with widgets
     size=18,
   )
 
-  #font for the plain text within the program
+  #font for the plain text within the program font=text_font_2
   text_font_2 = Font(
     family='Helvetica',
-    size=22,
+    size=20,
     weight='bold'
   )
 
@@ -136,7 +136,7 @@ def mainWin(): #Defines UI in terms of a window with widgets
   inventory_header.pack(fill='x', ipady='10', pady='10')
 
   #label for list
-  description_label = Label(inventory_frame, text='Name-----Amount-----Price')
+  description_label = Label(inventory_frame, text='Name-----Amount-----Price', font=text_font_2)
   description_label.pack()
 
   #get an inventory list object and pack it into this frame
@@ -163,7 +163,7 @@ def mainWin(): #Defines UI in terms of a window with widgets
   add_delete_header.pack(fill='x', ipady='10', pady='10')
 
   #write instructions
-  instructions1 = Label(add_delete_frame, text="Enter item name, amount, and price.\nPress button to add to the inventory list.")
+  instructions1 = Label(add_delete_frame, font=text_font_2, text="Enter item name, amount, and price.\nPress button to add to the inventory list.")
   instructions1.pack()
 
   #create three entry forms to get information for the new item, pack all three
@@ -199,7 +199,7 @@ def mainWin(): #Defines UI in terms of a window with widgets
   back_button_inventory.place(x=635, y=525)
 
   #delete instructions
-  instructions2 = Label(add_delete_frame, text="Enter name of the item to delete.\nPress button to delete from the inventory list.")
+  instructions2 = Label(add_delete_frame, font=text_font_2, text="Enter name of the item to delete.\nPress button to delete from the inventory list.")
   instructions2.pack()
 
   #Delete entry box
@@ -219,7 +219,7 @@ def mainWin(): #Defines UI in terms of a window with widgets
   transaction_header.pack(fill='x', ipady='10', pady='10')
 
   #tempory label for this screen
-  transaction_label_temp = Label(transaction_frame, text='Here is where we will put the elements for processing a transaction')
+  transaction_label_temp = Label(transaction_frame, font=text_font_2, text='Here is where we will put the elements for processing a transaction')
   transaction_label_temp.pack(pady=10)
 
   #Button to go back
@@ -233,20 +233,20 @@ def mainWin(): #Defines UI in terms of a window with widgets
   restockHeader = Label(restock_frame, text='Restock', bg='#4dd2ff', fg='black', font=title_font)
   restockHeader.pack(fill='x', ipady='10', pady='10')
 
-  #tempory label for this screen
-  restockLabel = Label(restock_frame, text='Item Name')
+
+  restockLabel = Label(restock_frame, font=text_font_2, text='Item Name')
   restockLabel.pack()
   itemName = Entry(restock_frame)
 
   #Labels and entry fields for restock
   #I know it looks bad, but it works
-  quantityLabel = Label(restock_frame, text='Quantity of Item')
+  quantityLabel = Label(restock_frame, font=text_font_2, text='Quantity of Item')
   quantity = Entry(restock_frame)
-  dayLabel = Label(restock_frame,text='Day')
+  dayLabel = Label(restock_frame, font=text_font_2, text='Day')
   day = Entry(restock_frame)
-  monthLabel = Label(restock_frame,text='Month')
+  monthLabel = Label(restock_frame, font=text_font_2, text='Month')
   month= Entry(restock_frame)
-  yearLabel = Label(restock_frame,text='Year')
+  yearLabel = Label(restock_frame, font=text_font_2, text='Year')
   year= Entry(restock_frame)
   itemName.pack()
   quantityLabel.pack()
