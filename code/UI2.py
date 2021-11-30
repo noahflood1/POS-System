@@ -167,11 +167,11 @@ def mainWin(): #Defines UI in terms of a window with widgets
   instructions1.pack()
 
   #create three entry forms to get information for the new item, pack all three
-  name_entry = Entry(add_delete_frame, width=10)
+  name_entry = Entry(add_delete_frame, width=20, font=text_font_2)
   name_entry.pack()
-  amount_entry = Entry(add_delete_frame, width=10)
+  amount_entry = Entry(add_delete_frame, width=20,font=text_font_2)
   amount_entry.pack()
-  price_entry = Entry(add_delete_frame, width=10)
+  price_entry = Entry(add_delete_frame, width=20, font=text_font_2)
   price_entry.pack()
 
   #clears the text from each of the add entry fields
@@ -203,7 +203,7 @@ def mainWin(): #Defines UI in terms of a window with widgets
   instructions2.pack()
 
   #Delete entry box
-  del_entry = Entry(add_delete_frame, width=10)
+  del_entry = Entry(add_delete_frame, width=20)
   del_entry.pack()
 
   #cleares the delete entry field
@@ -236,18 +236,18 @@ def mainWin(): #Defines UI in terms of a window with widgets
 
   restockLabel = Label(restock_frame, font=text_font_2, text='Item Name')
   restockLabel.pack()
-  itemName = Entry(restock_frame)
+  itemName = Entry(restock_frame, width=20)
 
   #Labels and entry fields for restock
   #I know it looks bad, but it works
   quantityLabel = Label(restock_frame, font=text_font_2, text='Quantity of Item')
-  quantity = Entry(restock_frame)
+  quantity = Entry(restock_frame, width=20)
   dayLabel = Label(restock_frame, font=text_font_2, text='Day')
-  day = Entry(restock_frame)
+  day = Entry(restock_frame, width=20)
   monthLabel = Label(restock_frame, font=text_font_2, text='Month')
-  month= Entry(restock_frame)
+  month= Entry(restock_frame, width=20)
   yearLabel = Label(restock_frame, font=text_font_2, text='Year')
-  year= Entry(restock_frame)
+  year= Entry(restock_frame, width=20)
   itemName.pack()
   quantityLabel.pack()
   quantity.pack()
