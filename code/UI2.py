@@ -4,27 +4,6 @@ Program for outputting the actual User Interface with all of it's functions
 @authors: 
 Noah Flood
 Jackson S.
-
-Features Added:
-
-Future Updates/ Fixes:
--Fix all the FIXME tags
--Add sufficent code for all of the frames
--Create a back button for all the frames
-
-Resources:
-Basic hexadecimal color picker: https://www.w3schools.com/colors/colors_picker.asp 
-Tkinter docs: https://rdbende.github.io/tkinter-docs/docs/# 
-How Grid() works: https://pythonguides.com/python-tkinter-grid/ 
-Creating a GUI with tkinter: https://realpython.com/python-gui-tkinter/ 
-Create separate windows: https://www.youtube.com/watch?v=MKgDQjZwI2o&t=403s
-
-TO-DO:
-Before lab on tuesday - upload presentation slides - upload code - must upload video presentation and peer reviews the day you present
-#name & bio
-#problem
-#solution
-#ask for questions
 '''
 
 from tkinter import *
