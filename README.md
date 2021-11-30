@@ -20,9 +20,14 @@ Create separate windows: https://www.youtube.com/watch?v=MKgDQjZwI2o&t=403s
 
 - Begin collaborating using Github repository andd desktop application on 11/30/21
 
-TO-DO:
+To-do:
 Before lab on tuesday - upload presentation slides - upload code - must upload video presentation and peer reviews the day you present
 #name & bio
 #problem
 #solution
 #ask for questions
+
+edit goals page to be good
+finish code 
+no biographies 
+memorize parts
