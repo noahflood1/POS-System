@@ -22,8 +22,8 @@ def mainWin(): #Defines UI in terms of a window with widgets
   win.title('POS system')
 
   #geometry of the main window
-  window_height = 1280
-  window_width = 960
+  window_height = 1024
+  window_width = 768
   win.geometry("{}x{}".format(window_height, window_width))
   win.config(bg='black')
   
@@ -36,8 +36,7 @@ def mainWin(): #Defines UI in terms of a window with widgets
   win.columnconfigure(0, weight=1)
 
   '''
-  Formatting for the programming is currently designed for presenting
-  to a large group with a projector screen.
+  Visual formatting for the program is currently made for MacOS.
   '''
 
 
