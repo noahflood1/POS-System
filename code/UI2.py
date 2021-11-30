@@ -57,10 +57,10 @@ def mainWin(): #Defines UI in terms of a window with widgets
     weight='bold'
   )
 
-  #font for buttons
-  text_font = Font(
+  #font for buttons  font=button_font
+  button_font = Font(
     family="Helvetica",
-    size=22,
+    size=18,
   )
 
   #font for the plain text within the program
@@ -98,23 +98,23 @@ def mainWin(): #Defines UI in terms of a window with widgets
   myLabel.pack(pady = 10)
 
   #inventory button
-  btn1 = Button(main_frame, text='Inventory', command=lambda:UI_commands2.show_frame(inventory_frame), background="black", fg='white', height=2, width=10, font=text_font)
+  btn1 = Button(main_frame, text='Inventory', command=lambda:UI_commands2.show_frame(inventory_frame), background="black", fg='white', height=2, width=10, font=button_font)
   btn1.pack(pady=10)
 
   #button to add/delete items (previously: button command=addWindow ANDD another button whose command == delWindow)
-  btn2 = Button(main_frame, text='Add/Delete Items', command=lambda:UI_commands2.show_frame(add_delete_frame), background="black", fg='white', height=2, width=13, font=text_font)
+  btn2 = Button(main_frame, text='Add/Delete Items', command=lambda:UI_commands2.show_frame(add_delete_frame), background="black", fg='white', height=2, width=13, font=button_font)
   btn2.pack(pady=10)
 
   #button for transaction screen
-  btn3 = Button(main_frame, text='Transaction', command=lambda:UI_commands2.show_frame(transaction_frame), background="black", fg='white', height=2, width=10, font=text_font)
+  btn3 = Button(main_frame, text='Transaction', command=lambda:UI_commands2.show_frame(transaction_frame), background="black", fg='white', height=2, width=10, font=button_font)
   btn3.pack(pady=10)
 
   #button for restock screen
-  btn4 = Button(main_frame, text='Restock',command=lambda:UI_commands2.show_frame(restock_frame), background="black", fg='white', height=2, width=10, font=text_font)
+  btn4 = Button(main_frame, text='Restock',command=lambda:UI_commands2.show_frame(restock_frame), background="black", fg='white', height=2, width=10, font=button_font)
   btn4.pack(pady=10)
 
   #button to quit the program
-  quitButton = Button(main_frame, text='Quit', command=lambda:quit(win), background="black", fg='white', height=2, width=10)
+  quitButton = Button(main_frame, font=button_font, text='Quit', command=lambda:quit(win), background="black", fg='white', height=2, width=10)
   quitButton.place(x=635, y=525)
 
 
@@ -144,15 +144,15 @@ def mainWin(): #Defines UI in terms of a window with widgets
   inventory_listbox.pack()
   
   #when the button is clicked, we update the list based upon the inventoryList list object
-  print_inventory_button = Button(inventory_frame, text="Update List", command=lambda:UI_commands2.updateFramedInventoryList(inventory_listbox), background="black", fg='white', height=2, width=10)
+  print_inventory_button = Button(inventory_frame, font=button_font, text="Update List", command=lambda:UI_commands2.updateFramedInventoryList(inventory_listbox), background="black", fg='white', height=2, width=10)
   print_inventory_button.place(x=635, y=150)
 
   #when the button is clicked, we print inventory in terminal for testing
-  print_inventory_button = Button(inventory_frame, text="Print Inventory", command=lambda:UI_commands2.printInventoryList(), background="black", fg='white', height=2, width=10)
+  print_inventory_button = Button(inventory_frame, font=button_font, text="Print Inventory", command=lambda:UI_commands2.printInventoryList(), background="black", fg='white', height=2, width=10)
   print_inventory_button.place(x=635, y=100)
 
   #Button to go back
-  back_button_inventory = Button(inventory_frame, text='Back', command=lambda:UI_commands2.show_frame(main_frame), background="black", fg='white', height=2, width=10)
+  back_button_inventory = Button(inventory_frame, font=button_font, text='Back', command=lambda:UI_commands2.show_frame(main_frame), background="black", fg='white', height=2, width=10)
   back_button_inventory.place(x=635, y=525)
 
 
@@ -191,11 +191,11 @@ def mainWin(): #Defines UI in terms of a window with widgets
   #create a button with a command that WHEN PRESSED, connects to TWO FUCNTIONS function that:
                                         #1) takes three parameters (as a list)to use to instantiate a new Item object which is then added to the inventoryList 
                                         #2) updates the file with the inventoryList afterwards
-  add_button = Button(add_delete_frame, text='Add', command=lambda:(UI_commands2.addToInventoryList(getNewItemParameters()), UI_commands2.update_file(), clearAddEntry()), background="black", fg='white', height=2, width=10)
+  add_button = Button(add_delete_frame, text='Add', font=button_font, command=lambda:(UI_commands2.addToInventoryList(getNewItemParameters()), UI_commands2.update_file(), clearAddEntry()), background="black", fg='white', height=2, width=10)
   add_button.pack()
 
   #Button to go back
-  back_button_inventory = Button(add_delete_frame, text='Back', command=lambda:UI_commands2.show_frame(main_frame), background="black", fg='white', height=2, width=10)
+  back_button_inventory = Button(add_delete_frame, font=button_font, text='Back', command=lambda:UI_commands2.show_frame(main_frame), background="black", fg='white', height=2, width=10)
   back_button_inventory.place(x=635, y=525)
 
   #delete instructions
@@ -210,7 +210,7 @@ def mainWin(): #Defines UI in terms of a window with widgets
   def clearDeleteEntry():
     del_entry.delete(0, END)
 
-  delButton = Button(add_delete_frame, text='Delete', command=lambda:(UI_commands2.deleteFromInventoryList(del_entry.get()), UI_commands2.update_file(), clearDeleteEntry()), background="black", fg='white', height=2, width=10)
+  delButton = Button(add_delete_frame, font=button_font, text='Delete', command=lambda:(UI_commands2.deleteFromInventoryList(del_entry.get()), UI_commands2.update_file(), clearDeleteEntry()), background="black", fg='white', height=2, width=10)
   delButton.pack()
 
   #----------------------------------------------------
@@ -223,7 +223,7 @@ def mainWin(): #Defines UI in terms of a window with widgets
   transaction_label_temp.pack(pady=10)
 
   #Button to go back
-  back_button_transaction = Button(transaction_frame, text='Back', command=lambda:UI_commands2.show_frame(main_frame), background="black", fg='white', height=2, width=10)
+  back_button_transaction = Button(transaction_frame, text='Back', font=button_font, command=lambda:UI_commands2.show_frame(main_frame), background="black", fg='white', height=2, width=10)
   back_button_transaction.place(x=635, y=525)
   
 
@@ -266,11 +266,11 @@ def mainWin(): #Defines UI in terms of a window with widgets
     day.delete(0, END)
   #restocks an item based off of 4 parameters
   #Quantity to restock
-  restockButton = Button(restock_frame, text='Restock Item', command=lambda:(UI_commands2.restock(itemName.get(),quantity.get(),month.get(),year.get(),day.get()), clearRestock() ), background="black", fg='white', height=2, width=10)
+  restockButton = Button(restock_frame, text='Restock Item', font=button_font, command=lambda:(UI_commands2.restock(itemName.get(),quantity.get(),month.get(),year.get(),day.get()), clearRestock() ), background="black", fg='white', height=2, width=10)
   restockButton.pack()
 
   #Button to go back
-  backButtonRestock = Button(restock_frame, text='Back', command=lambda:UI_commands2.show_frame(main_frame), background="black", fg='white', height=2, width=10)
+  backButtonRestock = Button(restock_frame, text='Back', font=button_font, command=lambda:UI_commands2.show_frame(main_frame), background="black", fg='white', height=2, width=10)
   backButtonRestock.place(x=635, y=525)
 
   #-----------------------------------------------------
