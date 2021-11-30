@@ -1,4 +1,4 @@
-
+#NEW COMMENT
 
 #creates an inventory list to hold items
 inventory = []
