@@ -9,7 +9,7 @@ Jackson S.
 from tkinter import *
 from tkinter.font import Font
 from random import *
-import UI_commands2
+from code import UI_commands2
 
 def mainWin(): #Defines UI in terms of a window with widgets
 

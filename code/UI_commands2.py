@@ -6,7 +6,7 @@ from tkinter import *
 from tkinter.font import Font
 from random import *
 import csv
-import Transaction
+from code import Transaction
 
 #----------------------------------------------------
 #Inventory List Methods

@@ -1,4 +1,4 @@
-import Restock as r
+from code import Restock as r
 
 #pull product prices and proccess customer transactions
 
