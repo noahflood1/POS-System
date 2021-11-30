@@ -20,11 +20,12 @@ def mainWin(): #Defines UI in terms of a window with widgets
   #starts main window loop as "win"
   win=Tk() 
   win.title('POS system')
-  win.geometry("800x600")
-  win.config(bg='black')
+
   #geometry of the main window
-  window_height = 800
-  window_width = 600
+  window_height = 1280
+  window_width = 960
+  win.geometry("{}x{}".format(window_height, window_width))
+  win.config(bg='black')
   
   #contrict the size of window so that it can't be resized
   win.minsize(window_height, window_width)
@@ -34,22 +35,40 @@ def mainWin(): #Defines UI in terms of a window with widgets
   win.rowconfigure(0, weight=1)
   win.columnconfigure(0, weight=1)
 
+  '''
+  Formatting for the programming is currently designed for presenting
+  to a large group with a projector screen.
+  '''
+
+
+  #----------------------------------------------------
   #define fonts to stylize text
+
+  #title Font
   title_font = Font(
       family="Helvetica",
-      size= 30,
+      size= 40,
       weight='bold'
       )
   
+  #font fot menu label
   big_font = Font(
     family="Helvetica",
-    size=20,
+    size=30,
     weight='bold'
   )
 
+  #font for buttons
   text_font = Font(
     family="Helvetica",
-    size=15,
+    size=25,
+  )
+
+  #font for the plain text within the program
+  text_font_2 = Font(
+    family='Helvetica',
+    size='25',
+    weight='bold'
   )
 
   #----------------------------------------------------
