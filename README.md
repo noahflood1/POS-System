@@ -20,6 +20,16 @@ Create separate windows: https://www.youtube.com/watch?v=MKgDQjZwI2o&t=403s
 
 - Begin collaborating using Github repository andd desktop application on 11/30/21
 
+------------------------------------------------------------
+Future Updates:
+
+- Create pseudo bank accounts
+- Check balances
+- Actually take money and get customer info in an encrypted way
+- Create buttons to add items to cart
+
+------------------------------------------------------------
+
 To-do:
 Before lab on tuesday - upload presentation slides - upload code - must upload video presentation and peer reviews the day you present
 #name & bio
