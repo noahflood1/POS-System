@@ -66,9 +66,8 @@ def mainWin(): #Defines UI in terms of a window with widgets
 
   #font for the plain text within the program font=text_font_2
   text_font_2 = Font(
-    family='Helvetica',
+    family='Raleway',
     size=20,
-    weight='bold'
   )
 
   #----------------------------------------------------
@@ -90,9 +89,9 @@ def mainWin(): #Defines UI in terms of a window with widgets
     frame.grid(row=0, column=0, stick='nsew') #does grid() to all these frames. only the last one grided shows; this is fixed with the function show_frame() below
 
     if not(frame == main_frame):
-      #create and add a back button to the frame
+      #create and add a back button to the frame, except for the main_frame
       back_button = Button(frame, font=button_font, text='Back', command=lambda:UI_commands2.show_frame(main_frame), background="black", fg='white', height=2, width=10)
-      back_button.place(x=800, y=400) #FIXME: Change this to a normal coordinate
+      back_button.place(x=800, y=550) #FIXME: Change this to a normal coordinate
 
 
   #----------------------------------------------------
@@ -232,9 +231,10 @@ def mainWin(): #Defines UI in terms of a window with widgets
 
   #"running total" visual amount  that updates when you press the "add to cart" button
   total_string = StringVar()
-  total_string.set("Total: ")
-  total_label = Label(transaction_frame, text=total_string, font=text_font_2)
-  total_label.place(x=700, y=500)
+  total_string.set("SUBTOTAL: ")
+
+  total_label = Label(transaction_frame, textvariable=total_string, font=text_font_2)
+  total_label.place(x=600, y=325)
 
   #function to get the parameters for the transaction from the entries
   item_name = ''

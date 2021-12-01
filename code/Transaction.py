@@ -49,7 +49,7 @@ def clearCart():
 
 #function that updates the running total on screen? do how you did it with update_inventroy list function in UI commansd
 def update_running_total_label(string_var):
-  string_var.set('Total: {}'.format(running_total))
+  string_var.set('SUBTOTAL: ${}'.format(running_total))
 
 #createing the receipt
 def create_receipt():
