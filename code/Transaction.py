@@ -4,13 +4,18 @@ For processing transactions
 import tkinter as tk
 from code import UI_commands2
 
+#Filepath for reciept
+filepath = "files/reciept.txt"
+
 #global variable about store
 business_title = "Grandma's Bakery"
 business_phone = "256-420-6969"
 
 #variables for person using POS
 customer_name = "Customer"
-location = ''
+location = 'Auburn AL'
+receipt_num = 0
+receipt_header = str(receipt_num) + ' - ' + location
 
 #cart stuff
 cartList = []
@@ -69,11 +74,24 @@ def update_running_total_label(string_var):
     print('running total before chaning sub_total',running_total)
     string_var.set('SUBTOTAL: ${}'.format(running_total))
 
+#writes receipt from cartList
+#INCREMENT THE RECIEPT NUBMER A TTHE END
+#item_text = "{name:<15}{stock:<5}{price:>6}".format(name=item.name, stock=item.stock, price=item.price)
+def write_receipt():
+    #Each line will be 42 Chars in total 
+    global receipt_txt
+    receipt_txt = '='*42 + '\n'
+    receipt_txt += "{a:^42}".format(a='#'+receipt_header) + '\n'
+    create_receipt()    
+
 #createing the receipt
 def create_receipt():
     #write reciept_txt to file
-    #print to console as well
     print(receipt_txt)
+    f = open(filepath,'w')
+    f.write(receipt_txt)
+    f.close()
+    #print to console as well
     return receipt_txt
     
 

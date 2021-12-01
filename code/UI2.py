@@ -316,7 +316,7 @@ def mainWin(): #Defines UI in terms of a window with widgets
   #Button to go through with the transaction
   #calls clear_total and the function that removes all the items from cart and sets their in_cart values to zero
   transaction_button = Button(transaction_frame, text='Confirm', font=button_font, 
-  command=lambda:(Transaction.clearCart()),
+  command=lambda:(Transaction.clearCart(),Transaction.write_receipt()),
   background="black", fg='white', height=2, width=10)
   transaction_button.pack()
 
