@@ -1,6 +1,13 @@
-a = 10
+
+a = 8
 b = 5
 
-a =+ b
+
+print(a)
+
+
+def func():
+    global a
+    a += b
 
 print(a)
