@@ -22,9 +22,10 @@ subtotal = 0
 total = 0
 
 def addToCartList(item, amount):
-    # change the item parameter's amount in cart value to "amount"
-    # add that item to cartList
-    pass
+    #change the item parameter's amount in cart value to "amount"
+    #add that item to cartList
+    yup = UI_commands2.getItemFromList(item)
+    yup.setCart(amount)
 
 def update_running_total_update():
     # for every item in cartList, reset the running total to zero, incremember running total
