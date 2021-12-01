@@ -82,6 +82,7 @@ def write_receipt():
     global receipt_txt
     receipt_txt = '='*42 + '\n'
     receipt_txt += "{a:^42}".format(a='#'+receipt_header) + '\n'
+    receipt_txt += "{a:^42}".format()
     create_receipt()    
 
 #createing the receipt
