@@ -231,9 +231,21 @@ def mainWin(): #Defines UI in terms of a window with widgets
   amountEntry.pack()
 
   #FIXME command for this button
-  #Button to add an item's price to the total
   #calls transaction.adddtocart( UI_commands2.getItemfromlist() )
   #also calls function that upddates it on screen
+  #clear entries
+
+  def get_purchase_parameters():
+    item_name = itemEntry.get()
+    amount_buying = amountEntry.get()
+
+    return item_name, amount_buying
+
+  def clearTransactionEntries():
+    itemEntry.delete(0, END)
+    amountEntry.delete(0, END) 
+
+  #Button to add an item's price to the total
   addButton = Button(transaction_frame, text='Add to Cart', font=button_font, command=lambda:UI_commands2.show_frame(main_frame), background="black", fg='white', height=2, width=10)
   addButton.pack()
 
