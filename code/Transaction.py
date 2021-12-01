@@ -12,4 +12,10 @@ customer_name = "Customer"
 #createing the receipt
 def create_receipt():
     receipt_txt = "Test"
+
+
+    
+    print(receipt_txt)
     return receipt_txt
+
+
