@@ -219,7 +219,7 @@ def mainWin(): #Defines UI in terms of a window with widgets
   transaction_header.pack(fill='x', ipady='10', pady='10')
 
   #tempory label for this screen
-  transaction_label_temp = Label(transaction_frame, font=text_font_2, text='Welcome. Enter items you would like to buy and the amount of each.')
+  transaction_label_temp = Label(transaction_frame, font=text_font_2, text='Welcome!\n-Enter items you would like to buy and the amount of each.\n-Then, press "Add to cart"\n-Press "Confirm" when you have added everything you want to your cart.')
   transaction_label_temp.pack(pady=10)
 
   #field for item name
@@ -230,59 +230,62 @@ def mainWin(): #Defines UI in terms of a window with widgets
   amountEntry = Entry(transaction_frame, width=20, font=text_font_2)
   amountEntry.pack()
 
+  #"running total" visual amount  that updates when you press the "add to cart" button
+  total_string = StringVar()
+  total_string.set("Total: ")
+  total_label = Label(transaction_frame, text=total_string, font=text_font_2)
+  total_label.place(x=700, y=500)
+
+  #function to get the parameters for the transaction from the entries
+  item_name = ''
+  amount_buying = ''
   def get_purchase_parameters():
+    global item_name
+    global amount_buying
     item_name = itemEntry.get()
     amount_buying = amountEntry.get()
 
-    return(item_name, amount_buying)
-
+  #function the clears the entries for aestetics
   def clearTransactionEntries():
     itemEntry.delete(0, END)
     amountEntry.delete(0, END) 
 
-  #FIXME command for this button
-  #calls transaction.adddtocart( UI_commands2.getItemfromlist() )
-  #also calls function that upddates it on screen
-  #clears entries last
+  #commands for the add button, all into one function for readability. everything here occurs when the user adds something to the cartLisst
+  def addButton_commands():
+    get_purchase_parameters() #actually puts the entries' values into variables
+    Transaction.addToCartList(item_name, amount_buying) #adds that new item to the cartList in Transaction
+    Transaction.update_running_total_label(total_string) #updates the running total on screen
+    clearTransactionEntries()  #clears entries last
 
   #Button to add an item's price to the total
-  addButton = Button(transaction_frame, text='Add to Cart', font=button_font, 
-    command=lambda:(
-    Transaction.addToCartList(
-      get_purchase_parameters()),
-    Transaction.update_running_total_label(total_string), 
-    clearTransactionEntries()), 
-    background="black", fg='white', height=2, width=10)
+  addButton = Button(transaction_frame, text='Add to Cart',command=lambda:(addButton_commands()), background="black", fg='white', height=2, width=10, font=button_font, )
   addButton.pack()
 
   #FIXME command for this button 
   #Button to go through with the transaction
-  #calls clear_total and the feuctin that romves stuff from cart and sets tehri in_cart values to zero
+  #calls clear_total and the function that removes all the items from cart and sets their in_cart values to zero
   transaction_button = Button(transaction_frame, text='Confirm', font=button_font, command=lambda:UI_commands2.show_frame(main_frame), background="black", fg='white', height=2, width=10)
   transaction_button.pack()
-
-  #Total amount that updates when you press the addd to cart button
-  total_string = StringVar()
-  total_label = Label(transaction_frame, text=total_string, font=text_font_2)
-  total_label.place(x=500, y=500)
-
-  #Button to go back
-  back_button_transaction = Button(transaction_frame, text='Back', font=button_font, command=lambda:UI_commands2.show_frame(main_frame), background="black", fg='white', height=2, width=10)
-  back_button_transaction.place(x=800, y=660)
 
 
   #-----------------------------------------------------
   #Restock Frame Code
 
+  #headder
   restockHeader = Label(restock_frame, text='Restock', bg='#4dd2ff', fg='black', font=title_font)
   restockHeader.pack(fill='x', ipady='10', pady='10')
+
+  #instructions for this page
+  restockInstructions =  Label(restock_frame, font=text_font_2, text='Enter necessary parameters to restock an item. Enter today\'s date to get the correct price.')
+  restockInstructions.pack()
+
+  #Labels and entry fields for restock
+  #I know it looks bad, but it works
 
   restockLabel = Label(restock_frame, font=text_font_2, text='Item Name')
   restockLabel.pack()
   itemName = Entry(restock_frame, width=20)
 
-  #Labels and entry fields for restock
-  #I know it looks bad, but it works
   quantityLabel = Label(restock_frame, font=text_font_2, text='Quantity of Item')
   quantity = Entry(restock_frame, width=20)
   dayLabel = Label(restock_frame, font=text_font_2, text='Day')
@@ -301,14 +304,16 @@ def mainWin(): #Defines UI in terms of a window with widgets
   yearLabel.pack()
   year.pack()
 
+  #function to clear entries for restock
   def clearRestock():
     itemName.delete(0, END)
     quantity.delete(0, END)
     month.delete(0, END)
     year.delete(0, END)
     day.delete(0, END)
-  #restocks an item based off of 4 parameters
+
   #Quantity to restock
+   #restocks an item based off of 4 parameters
   restockButton = Button(restock_frame, text='Restock Item', font=button_font, command=lambda:(UI_commands2.restock(itemName.get(),quantity.get(),month.get(),year.get(),day.get()), clearRestock() ), background="black", fg='white', height=2, width=10)
   restockButton.pack()
 

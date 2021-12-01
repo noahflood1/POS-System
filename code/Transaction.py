@@ -21,7 +21,7 @@ running_total = 0
 subtotal = 0
 total = 0
 
-def addToCartList(item, amount):
+def addToCartList(item, amount): #takes a string "item" that is the name of an existing item, takes a string "amount" that represents the amount of that item we want to add to cart.
     #change the item parameter's amount in cart value to "amount"
     #add that item to cartList
     yup = UI_commands2.getItemFromList(item)
