@@ -1,8 +1,9 @@
 # POS-System 2021
 
 authors:
-Dev: Noah Flood
-Dev: Jackson Scifres
+Head Developer: Noah Flood
+Head Developer: Jackson Scifres
+
 Dev Patel
 Scottie Davis
 Logan Killian
