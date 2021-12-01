@@ -2,6 +2,8 @@
 For processing transactions
 '''
 
+from code import UI_commands2
+
 #global variable about store
 business_title = "Grandma's Bakery"
 business_phone = "256-420-6969"
@@ -25,10 +27,6 @@ def addToCartList(item):
 
 #createing the receipt
 def create_receipt():
-    
-
-
-
     print(receipt_txt)
     return receipt_txt
 
