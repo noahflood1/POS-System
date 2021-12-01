@@ -29,11 +29,11 @@ def addToCartList(item, amount):
     cartList.appent(yup)
 
 def update_running_total_update():
-    #for item in cartList
-    #reset total
-    #total += something
-    #something item_total_cost
+    # for every item in cartList, reset the running total to zero, incremember running total
+    # by the amount of the item in cart times the price
+
     global running_total
+    running_total = 0
     for item in cartList:
         item_X_amount_in_cart = (item.price * item.cart)
         running_total += item_X_amount_in_cart
