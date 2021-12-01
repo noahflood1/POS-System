@@ -144,11 +144,6 @@ def restock(a,b,c,d,e):
   update_file()
   
   
-
-
-
-
-
 #----------------------------------------------------
 #main code for testing
 
