@@ -149,7 +149,7 @@ def restock(a,b,c,d,e):
   
   
 #----------------------------------------------------
-#main code for testing
+#code for the item lists and the transaction screen stuff
 
 def getItemFromList(itemName):
   tempDict={}
@@ -159,6 +159,12 @@ def getItemFromList(itemName):
     count+=1
   return(inventoryList[tempDict.get(itemName)])
 
+#function that updates the running total on screen? do how you did it with update_inventroy list function in UI commansd
+def update_running_total_label():
+  pass
+
+#----------------------------------------------------
+#main code for testing
 
 '''
 a = 'beans'
