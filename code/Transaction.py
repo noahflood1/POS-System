@@ -25,6 +25,7 @@ receipt_txt = "Test"
 running_total = 0
 subtotal = 0
 total = 0
+tax = 0.09
 
 def updateCartList(item, amount): 
     #BIG FIX !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -54,12 +55,15 @@ def updateCartList(item, amount):
 
 def update_running_total():
     global running_total
-    #running_total = 0
+    global subtotal
+    tempvar = 0
     for item in cartList:
         #print(item.name, item.stock, item.price, item.cart, 'CARTLIST')
 
         item_X_amount_in_cart = (float(item.price) * float(item.cart))
-        running_total += float(item_X_amount_in_cart)
+        tempvar += float(item_X_amount_in_cart)
+    running_total = tempvar
+    subtotal = running_total
 
 def clearCart():
     #set every cart value in the cartlist to 0
@@ -79,10 +83,34 @@ def update_running_total_label(string_var):
 #item_text = "{name:<15}{stock:<5}{price:>6}".format(name=item.name, stock=item.stock, price=item.price)
 def write_receipt():
     #Each line will be 42 Chars in total 
+    print(cartList)
     global receipt_txt
+    global receipt_num
     receipt_txt = '='*42 + '\n'
     receipt_txt += "{a:^42}".format(a='#'+receipt_header) + '\n'
-    receipt_txt += "{a:^42}".format()
+    receipt_txt += "{a:^42}".format(a='--'+business_title+'--') + '\n'
+    receipt_txt += "{a:^42}".format(a=business_phone) + '\n'
+    receipt_txt +=  '\n'
+    receipt_txt += '-'*42 + '\n'
+    receipt_txt += "{a:<18}{b:<8}{c:>5}{d:>11}".format(a='Item',b='Qty',c='Price',d='Total') + '\n'
+    receipt_txt += '-'*42 + '\n'
+    for item in cartList:
+       if(item.cart != 0):
+            total = float(item.price) * int(item.cart)
+            receipt_txt += "{a:<18}{b:<8}{c:>5}{d:>11}".format(a=item.name,b=item.cart,c=item.price,d=total) + '\n'
+    receipt_txt += "{a:>42}".format(a='-'*12) + '\n'
+    receipt_txt += "{a:<21}{b:>21}".format(a='Subtotal',b='$'+str(round(subtotal,2))) + '\n'
+    receipt_txt += "{a:<21}{b:>21}".format(a='Tax',b='$'+str(round(subtotal*tax,2))) + '\n'
+    receipt_txt += "{a:>42}".format(a='-'*12) + '\n'
+    receipt_txt += "{a:<21}{b:>21}".format(a='Total',b='$'+str(round(subtotal+(subtotal*tax),2))) + '\n'
+    receipt_txt += "{a:>42}".format(a='~'*12) + '\n'
+    receipt_txt += "{a:<42}".format(a='Tender:') + '\n'
+    receipt_txt += "{a:<21}{b:>21}".format(a='Debit',b='$'+str(round(subtotal+(subtotal*tax),2))) + '\n'
+    receipt_txt += "{a:<42}".format(a='*'*12 + '8008') + '\n'
+    receipt_txt = '='*42 + '\n'
+
+    receipt_num += 1
+
     create_receipt()    
 
 #createing the receipt
