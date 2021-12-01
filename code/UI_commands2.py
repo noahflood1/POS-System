@@ -71,7 +71,7 @@ class Item:
     self.name = name
     self.stock = stock
     self.price = price
-
+    
   #change price of an item
   def changePrice(self, price):
     self.price = price
@@ -83,6 +83,9 @@ class Item:
   #using an item object and an amount returns the price of amount of item
   def buyItem(self, amount):
     return(self.price * amount)
+  
+  def setCart(self, cart):
+    self.cart = cart
 
   #toString method for Item objects
   def toString(self):
@@ -146,6 +149,15 @@ def restock(a,b,c,d,e):
   
 #----------------------------------------------------
 #main code for testing
+
+def getItemFromList(itemName):
+  tempDict={}
+  count=0
+  for item in inventoryList:
+    tempDict.update({item.name:count})
+    count+=1
+  return(inventoryList[tempDict.get(itemName)])
+
 
 '''
 a = 'beans'
