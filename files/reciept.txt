@@ -1,19 +1,25 @@
 ==========================================
-              #2 - Auburn AL              
+             #11 - Auburn AL              
            --Grandma's Bakery--           
                256-420-6969               
 
 ------------------------------------------
 Item              Qty     Price      Total
 ------------------------------------------
-a                 6           1        6.0
+a                 1           1      $1.00
                               ------------
-Subtotal                              $6.0
-Tax                                  $0.54
+Subtotal                             $1.00
+Tax                                  $0.09
                               ------------
-Total                                $6.54
+Total                                $1.09
                               ~~~~~~~~~~~~
 Tender:                                   
-Debit                                $6.54
-************8008                          
+Debit                                $1.09
+************8007                          
 ==========================================
+
+              Thank you for               
+        visiting Grandma's Bakery!        
+                   ---                    
+          Leave us a review at:           
+           http://bit.ly/4kb77v           

@@ -106,17 +106,24 @@ def write_receipt():
     for item in cartList:
        if(item.cart != 0):
             total = float(item.price) * int(item.cart)
-            receipt_txt += "{a:<18}{b:<8}{c:>5}{d:>11}".format(a=item.name,b=item.cart,c=item.price,d=total) + '\n'
+            receipt_txt += "{a:<18}{b:<8}{c:>5}{d:>11}".format(a=item.name,b=item.cart,c=item.price,d='$' + format(total, '.2f') ) + '\n'
     receipt_txt += "{a:>42}".format(a='-'*12) + '\n'
-    receipt_txt += "{a:<21}{b:>21}".format(a='Subtotal',b='$'+str(round(subtotal,2))) + '\n'
+    receipt_txt += "{a:<21}{b:>21}".format(a='Subtotal',b='$'+ format( round(subtotal,2), '.2f')) + '\n'
     receipt_txt += "{a:<21}{b:>21}".format(a='Tax',b='$'+str(round(subtotal*tax,2))) + '\n'
     receipt_txt += "{a:>42}".format(a='-'*12) + '\n'
     receipt_txt += "{a:<21}{b:>21}".format(a='Total',b='$'+str(round(subtotal+(subtotal*tax),2))) + '\n'
     receipt_txt += "{a:>42}".format(a='~'*12) + '\n'
     receipt_txt += "{a:<42}".format(a='Tender:') + '\n'
     receipt_txt += "{a:<21}{b:>21}".format(a='Debit',b='$'+str(round(subtotal+(subtotal*tax),2))) + '\n'
-    receipt_txt += "{a:<42}".format(a='*'*12 + '8008') + '\n'
+    receipt_txt += "{a:<42}".format(a='*'*12 + '8007') + '\n'
     receipt_txt += '='*42 + '\n'
+    receipt_txt += '\n'
+    receipt_txt += "{a:^42}".format(a='Thank you for') + '\n'
+    receipt_txt += "{a:^42}".format(a='visiting ' + business_title + '!') + '\n'
+    receipt_txt += "{a:^42}".format(a='---') + '\n'
+    receipt_txt += "{a:^42}".format(a='Leave us a review at: ') + '\n'
+    receipt_txt += "{a:^42}".format(a='http://bit.ly/4kb77v') + '\n'
+
 
     receipt_num +=1
     f = open('files/num.txt','w')
