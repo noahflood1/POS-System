@@ -29,14 +29,22 @@ def addToCartList(item, amount):
     cartList.appent(yup)
 
 def update_running_total_update():
-    # for every item in cartList, reset the running total to zero, incremember running total
-    # by the amount of the item in cart times the price
-
+    #for item in cartList
+    #reset total
+    #total += something
+    #something item_total_cost
     global running_total
-    running_total = 0
     for item in cartList:
         item_X_amount_in_cart = (item.price * item.cart)
         running_total += item_X_amount_in_cart
+
+def clearCart():
+    #set every cart value in the cartlist to 0
+    #set cartList to []
+    global cartList
+    for item in cartList:
+        item.cart = 0
+    cartList = []
 
 #function that updates the running total on screen? do how you did it with update_inventroy list function in UI commansd
 def update_running_total_label():
