@@ -46,7 +46,7 @@ def getFramedInventoryList(master_frame):
 
     for item in inventoryList:
         item_text = "{name:<15}{stock:<5}{price:>6}".format(name=item.name, stock=item.stock, price=item.price)
-        #print(item_text)
+        print(item_text)
         inventory_listbox.insert("end", item_text)
     #print('Why is this not formatted correctly on screen????')
 
@@ -58,7 +58,7 @@ def updateFramedInventoryList(Listbox):
 
     for item in inventoryList:
         item_text = "{name:<15}{stock:<5}{price:>6}".format(name=item.name, stock=item.stock, price=item.price)
-        #print(item_text)
+        print(item_text)
         Listbox.insert("end", item_text)
     #print('Why is this not formatted correctly on screen????')
 
