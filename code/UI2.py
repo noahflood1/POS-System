@@ -10,6 +10,7 @@ from tkinter import *
 from tkinter.font import Font
 from random import *
 from code import UI_commands2
+from code import Transaction
 
 def mainWin(): #Defines UI in terms of a window with widgets
 
