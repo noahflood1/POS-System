@@ -83,9 +83,16 @@ def mainWin(): #Defines UI in terms of a window with widgets
 
   #FIXME: Add all new frames into this loop so that they exist in the window
   #They all exist on top of one another simultaneously, but only one is showing at a time (only one is on top at a time)
+  #TASKS DONE FOR ALL THE WINDOWS##############################
   for frame in (main_frame, inventory_frame, add_delete_frame, stocks_frame, transaction_frame, restock_frame):
+
     frame.grid(row=0, column=0, stick='nsew') #does grid() to all these frames. only the last one grided shows; this is fixed with the function show_frame() below
-  
+
+    if not(frame == main_frame):
+      #create and add a back button to the frame
+      back_button = Button(frame, font=button_font, text='Back', command=lambda:UI_commands2.show_frame(main_frame), background="black", fg='white', height=2, width=10)
+      back_button.place(x=800, y=400) #FIXME: Change this to a normal coordinate
+
 
   #----------------------------------------------------
   #main_frame code
@@ -151,10 +158,6 @@ def mainWin(): #Defines UI in terms of a window with widgets
   update_list_button = Button(inventory_frame, font=button_font, text="Update List", command=lambda:UI_commands2.updateFramedInventoryList(inventory_listbox), background="black", fg='white', height=2, width=10)
   update_list_button.place(x=800, y=160)
 
-  #Button to go back
-  back_button_inventory = Button(inventory_frame, font=button_font, text='Back', command=lambda:UI_commands2.show_frame(main_frame), background="black", fg='white', height=2, width=10)
-  back_button_inventory.place(x=800, y=660)
-
 
   #----------------------------------------------------
   #add_delete_frame code
@@ -194,10 +197,6 @@ def mainWin(): #Defines UI in terms of a window with widgets
   add_button = Button(add_delete_frame, text='Add', font=button_font, command=lambda:(UI_commands2.addToInventoryList(getNewItemParameters()), UI_commands2.update_file(), clearAddEntry()), background="black", fg='white', height=2, width=10)
   add_button.pack()
 
-  #Button to go back
-  back_button_inventory = Button(add_delete_frame, font=button_font, text='Back', command=lambda:UI_commands2.show_frame(main_frame), background="black", fg='white', height=2, width=10)
-  back_button_inventory.place(x=800, y=660)
-
   #delete instructions
   instructions2 = Label(add_delete_frame, font=text_font_2, text="Enter name of the item to delete.\nPress button to delete from the inventory list.")
   instructions2.pack()
@@ -222,17 +221,11 @@ def mainWin(): #Defines UI in terms of a window with widgets
   transaction_label_temp = Label(transaction_frame, font=text_font_2, text='Here is where we will put the elements for processing a transaction')
   transaction_label_temp.pack(pady=10)
 
-  #Button to go back
-  back_button_transaction = Button(transaction_frame, text='Back', font=button_font, command=lambda:UI_commands2.show_frame(main_frame), background="black", fg='white', height=2, width=10)
-  back_button_transaction.place(x=800, y=660)
-  
-
   #-----------------------------------------------------
   #Restock Frame Code
 
   restockHeader = Label(restock_frame, text='Restock', bg='#4dd2ff', fg='black', font=title_font)
   restockHeader.pack(fill='x', ipady='10', pady='10')
-
 
   restockLabel = Label(restock_frame, font=text_font_2, text='Item Name')
   restockLabel.pack()
@@ -268,10 +261,6 @@ def mainWin(): #Defines UI in terms of a window with widgets
   #Quantity to restock
   restockButton = Button(restock_frame, text='Restock Item', font=button_font, command=lambda:(UI_commands2.restock(itemName.get(),quantity.get(),month.get(),year.get(),day.get()), clearRestock() ), background="black", fg='white', height=2, width=10)
   restockButton.pack()
-
-  #Button to go back
-  backButtonRestock = Button(restock_frame, text='Back', font=button_font, command=lambda:UI_commands2.show_frame(main_frame), background="black", fg='white', height=2, width=10)
-  backButtonRestock.place(x=800, y=660)
 
 
   #-----------------------------------------------------
