@@ -230,11 +230,6 @@ def mainWin(): #Defines UI in terms of a window with widgets
   amountEntry = Entry(transaction_frame, width=20, font=text_font_2)
   amountEntry.pack()
 
-  #FIXME command for this button
-  #calls transaction.adddtocart( UI_commands2.getItemfromlist() )
-  #also calls function that upddates it on screen
-  #clear entries
-
   def get_purchase_parameters():
     item_name = itemEntry.get()
     amount_buying = amountEntry.get()
@@ -245,8 +240,15 @@ def mainWin(): #Defines UI in terms of a window with widgets
     itemEntry.delete(0, END)
     amountEntry.delete(0, END) 
 
+  #FIXME command for this button
+  #calls transaction.adddtocart( UI_commands2.getItemfromlist() )
+  #also calls function that upddates it on screen
+  #clears entries last
+
   #Button to add an item's price to the total
-  addButton = Button(transaction_frame, text='Add to Cart', font=button_font, command=lambda:UI_commands2.show_frame(main_frame), background="black", fg='white', height=2, width=10)
+  addButton = Button(transaction_frame, text='Add to Cart', font=button_font, 
+    command=lambda:UI_commands2.show_frame(main_frame), Transaction.addToCartList(get_purchase_parameters()), Transaction.update_runn
+    background="black", fg='white', height=2, width=10)
   addButton.pack()
 
   #FIXME command for this button 
@@ -255,12 +257,14 @@ def mainWin(): #Defines UI in terms of a window with widgets
   transaction_button = Button(transaction_frame, text='Confirm', font=button_font, command=lambda:UI_commands2.show_frame(main_frame), background="black", fg='white', height=2, width=10)
   transaction_button.pack()
 
+  #Total amount that updates when you press the addd to cart button
+  total_button = StringVar(transaction_frame, text='Total:', font=text_font_2)
+  total_button.place(500, 500)
+
   #Button to go back
   back_button_transaction = Button(transaction_frame, text='Back', font=button_font, command=lambda:UI_commands2.show_frame(main_frame), background="black", fg='white', height=2, width=10)
   back_button_transaction.place(x=800, y=660)
 
-
-  
 
   #-----------------------------------------------------
   #Restock Frame Code

@@ -28,7 +28,7 @@ def addToCartList(item, amount):
     yup.setCart(amount)
     cartList.appent(yup)
 
-def update_running_total_update():
+def update_running_total():
     #for item in cartList
     #reset total
     #total += something
@@ -47,8 +47,8 @@ def clearCart():
     cartList = []
 
 #function that updates the running total on screen? do how you did it with update_inventroy list function in UI commansd
-def update_running_total_label():
-    pass
+def update_running_total_label(string_var):
+  string_var.set('Total: {}'.format(running_total))
 
 #createing the receipt
 def create_receipt():

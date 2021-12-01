@@ -46,9 +46,9 @@ def getFramedInventoryList(master_frame):
 
     for item in inventoryList:
         item_text = "{name:<15}{stock:<5}{price:>6}".format(name=item.name, stock=item.stock, price=item.price)
-        print(item_text)
+        #print(item_text)
         inventory_listbox.insert("end", item_text)
-    print('Why is this not formatted correctly on screen????')
+    #print('Why is this not formatted correctly on screen????')
 
     return inventory_listbox
 
@@ -58,9 +58,9 @@ def updateFramedInventoryList(Listbox):
 
     for item in inventoryList:
         item_text = "{name:<15}{stock:<5}{price:>6}".format(name=item.name, stock=item.stock, price=item.price)
-        print(item_text)
+        #print(item_text)
         Listbox.insert("end", item_text)
-    print('Why is this not formatted correctly on screen????')
+    #print('Why is this not formatted correctly on screen????')
 
 #----------------------------------------------------
 #Item class - Container for name, stock, and price of items
@@ -158,10 +158,6 @@ def getItemFromList(itemName):
     tempDict.update({item.name:count})
     count+=1
   return(inventoryList[tempDict.get(itemName)])
-
-#function that updates the running total on screen? do how you did it with update_inventroy list function in UI commansd
-def update_running_total_label():
-  pass
 
 #----------------------------------------------------
 #main code for testing
