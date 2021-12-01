@@ -49,7 +49,7 @@ def updateCartList(item, amount):
 
 def update_running_total():
     global running_total
-    running_total = 0
+    #running_total = 0
     for item in cartList:
         #print(item.name, item.stock, item.price, item.cart, 'CARTLIST')
 
