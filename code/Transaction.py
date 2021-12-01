@@ -1,7 +1,7 @@
 '''
 For processing transactions
 '''
-
+import tkinter as tk
 from code import UI_commands2
 
 #global variable about store
