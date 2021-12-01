@@ -31,7 +31,7 @@ def update_running_total_update():
     #reset total
     #total += something
     #something item_total_cost
-
+    global running_total
     for item in cartList:
         item_X_amount_in_cart = (item.price * item.cart)
         running_total += item_X_amount_in_cart
