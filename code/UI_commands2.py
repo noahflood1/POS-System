@@ -134,7 +134,7 @@ def quit(win):
 #----------------------------------------------------
 #Restock methods
 def restock(a,b,c,d,e):
-  Transaction.restockDate(b,c,d,e)
+  Bank_Account.restockDate(b,c,d,e)
   tempDict={}
   count=0
   for item in inventoryList:

@@ -221,6 +221,20 @@ def mainWin(): #Defines UI in terms of a window with widgets
   transaction_label_temp = Label(transaction_frame, font=text_font_2, text='Here is where we will put the elements for processing a transaction')
   transaction_label_temp.pack(pady=10)
 
+  #field for item name
+  itemEntry = Entry(transaction_frame, width=20, font=text_font_2)
+  itemEntry.pack()
+
+  #field for amount of item wanted
+  amountEntry = Entry(transaction_frame, width=20, font=text_font_2)
+  amountEntry.pack()
+
+  #FIXME command for this button
+  #Button to add an item's price to the total
+  addButton = Button(transaction_frame, text='Add to Cart', font=button_font, command=lambda:UI_commands2.show_frame(main_frame), background="black", fg='white', height=2, width=10)
+  addButton.pack()
+
+  #FIXME command for this button 
   #Button to go through with the transaction
   transaction_button = Button(transaction_frame, text='Confirm', font=button_font, command=lambda:UI_commands2.show_frame(main_frame), background="black", fg='white', height=2, width=10)
   transaction_button.pack()
