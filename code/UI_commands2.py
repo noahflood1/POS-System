@@ -158,6 +158,7 @@ def getItemFromList(itemName):
     tempDict.update({item.name:count})
     count+=1
   return(inventoryList[tempDict.get(itemName)])
+  
 
 #----------------------------------------------------
 #main code for testing

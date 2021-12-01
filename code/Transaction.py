@@ -26,7 +26,7 @@ def addToCartList(item, amount): #takes a string "item" that is the name of an e
     #add that item to cartList
     yup = UI_commands2.getItemFromList(item)
     yup.setCart(int(amount))
-    cartList.appent(yup)
+    cartList.append(yup)
     update_running_total()
 
 def update_running_total():
@@ -35,9 +35,19 @@ def update_running_total():
     #total += something
     #something item_total_cost
     global running_total
+    running_total = 0
     for item in cartList:
+
+        #test string
+        print(str(item.name) +' '+ str(item.price) +' '+ str(item.cart))
+
         item_X_amount_in_cart = (item.price * item.cart)
-        running_total += item_X_amount_in_cart
+
+        #test lines
+        #print((type(item_X_amount_in_cart) is str))
+        #print((type(running_total) is str))
+
+        running_total = int(running_total) + int(item_X_amount_in_cart)
 
 def clearCart():
     #set every cart value in the cartlist to 0

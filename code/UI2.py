@@ -286,14 +286,16 @@ def mainWin(): #Defines UI in terms of a window with widgets
   total_label = Label(transaction_frame, textvariable=total_string, font=text_font_2)
   total_label.place(x=600, y=325)
 
+  #FIXME: Doesn't actua;y changein amount_buying
   #function to get the parameters for the transaction from the entries
-  item_name = ''
-  amount_buying = ''
-  def get_purchase_parameters():
-    global item_name
-    global amount_buying
+  def get_item_name():
     item_name = itemEntry.get()
+    return item_name
+  
+  def get_item_amount():
     amount_buying = amountEntry.get()
+    return amount_buying
+
 
   #function the clears the entries for aestetics
   def clearTransactionEntries():
@@ -302,8 +304,14 @@ def mainWin(): #Defines UI in terms of a window with widgets
 
   #commands for the add button, all into one function for readability. everything here occurs when the user adds something to the cartLisst
   def addButton_commands():
-    get_purchase_parameters() #actually puts the entries' values into variables
-    Transaction.addToCartList(item_name, amount_buying) #adds that new item to the cartList in Transaction
+
+    #FIXME: personal comment: I HATE THIS LINE!!!!!!!!!!!!! it's had like 67657575467687675645768756687 errors
+    Transaction.addToCartList(get_item_name(), get_item_amount()) #adds that new item to the cartList in Transaction
+
+    #FIXME: test line
+    #test lines
+    print(Transaction.running_total)
+
     Transaction.update_running_total_label(total_string) #updates the running total on screen
     clearTransactionEntries()  #clears entries last
 
