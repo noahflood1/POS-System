@@ -112,13 +112,13 @@ def mainWin(): #Defines UI in terms of a window with widgets
   btn2 = Button(main_frame, text='Add/Delete Items', command=lambda:UI_commands2.show_frame(add_delete_frame), background="black", fg='white', height=2, width=13, font=button_font)
   btn2.pack(pady=10)
 
-  #button for transaction screen
-  btn3 = Button(main_frame, text='Transaction', command=lambda:UI_commands2.show_frame(transaction_frame), background="black", fg='white', height=2, width=10, font=button_font)
-  btn3.pack(pady=10)
-
   #button for restock screen
   btn4 = Button(main_frame, text='Restock',command=lambda:UI_commands2.show_frame(restock_frame), background="black", fg='white', height=2, width=10, font=button_font)
   btn4.pack(pady=10)
+
+  #button for transaction screen
+  btn3 = Button(main_frame, text='Transaction', command=lambda:UI_commands2.show_frame(transaction_frame), background="black", fg='white', height=2, width=10, font=button_font)
+  btn3.pack(pady=10)
 
   #button to quit the program
   quitButton = Button(main_frame, font=button_font, text='Quit', command=lambda:quit(win), background="black", fg='white', height=2, width=10)
@@ -304,14 +304,7 @@ def mainWin(): #Defines UI in terms of a window with widgets
 
   #commands for the add button, all into one function for readability. everything here occurs when the user adds something to the cartLisst
   def addButton_commands():
-
-    #FIXME: personal comment: I HATE THIS LINE!!!!!!!!!!!!! it's had like 67657575467687675645768756687 errors
-    Transaction.addToCartList(get_item_name(), get_item_amount()) #adds that new item to the cartList in Transaction
-
-    #FIXME: test line
-    #test lines
-    print(Transaction.running_total)
-
+    Transaction.updateCartList(get_item_name(), get_item_amount()) #adds that new item to the cartList in Transaction based on entered items
     Transaction.update_running_total_label(total_string) #updates the running total on screen
     clearTransactionEntries()  #clears entries last
 
@@ -322,7 +315,9 @@ def mainWin(): #Defines UI in terms of a window with widgets
   #FIXME command for this button 
   #Button to go through with the transaction
   #calls clear_total and the function that removes all the items from cart and sets their in_cart values to zero
-  transaction_button = Button(transaction_frame, text='Confirm', font=button_font, command=lambda:UI_commands2.show_frame(main_frame), background="black", fg='white', height=2, width=10)
+  transaction_button = Button(transaction_frame, text='Confirm', font=button_font, 
+  command=lambda:(UI_commands2.show_frame(main_frame), Transaction.clearCart()),
+  background="black", fg='white', height=2, width=10)
   transaction_button.pack()
 
 
