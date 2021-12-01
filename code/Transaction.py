@@ -26,6 +26,7 @@ def addToCartList(item, amount):
     #add that item to cartList
     yup = UI_commands2.getItemFromList(item)
     yup.setCart(amount)
+    cartList.appent(yup)
 
 def update_running_total_update():
     #for item in cartList
