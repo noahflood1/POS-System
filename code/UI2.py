@@ -222,6 +222,12 @@ def mainWin(): #Defines UI in terms of a window with widgets
   transaction_label_temp = Label(transaction_frame, font=text_font_2, text='Here is where we will put the elements for processing a transaction')
   transaction_label_temp.pack(pady=10)
 
+
+
+  #Button to go through with the transaction
+  transaction_button = Button(transaction_frame, text='Confirm', font=button_font, command=lambda:UI_commands2.show_frame(main_frame), background="black", fg='white', height=2, width=10)
+  transaction_button.pack()
+
   #Button to go back
   back_button_transaction = Button(transaction_frame, text='Back', font=button_font, command=lambda:UI_commands2.show_frame(main_frame), background="black", fg='white', height=2, width=10)
   back_button_transaction.place(x=800, y=660)
