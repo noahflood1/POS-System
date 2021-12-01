@@ -34,7 +34,7 @@ def update_running_total_update():
 
     for item in cartList:
         item_X_amount_in_cart = (item.price * item.cart)
-        running_total += item_X_amount_in_cart
+        running_total  item_X_amount_in_cart
 
 #function that updates the running total on screen? do how you did it with update_inventroy list function in UI commansd
 def update_running_total_label():

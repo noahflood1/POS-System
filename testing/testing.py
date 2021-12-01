@@ -1,17 +1,6 @@
-from tkinter import *
-from tkinter.font import Font
-from random import *
+a = 10
+b = 5
 
-root = Tk()
-root.title("Test")
-root.geometry("500x500")
-root.config(bg='black')
+a =+ b
 
-root.rowconfigure(0, weight=1)
-root.columnconfigure(0, weight=1)
-
-main_frame = Frame(root, bg="red")
-main_frame.grid(row=0, column=0, sticky='nsew')
-
-
-root.mainloop()
+print(a)
