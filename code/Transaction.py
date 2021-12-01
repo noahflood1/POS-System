@@ -21,14 +21,28 @@ running_total = 0
 subtotal = 0
 total = 0
 
-def addToCartList(item):
+def addToCartList(item, amount):
+    #change the item parameter's amount in cart value to "amount"
+    #add that item to cartList
     pass
 
+def running_total():
+    #for item in itemList
+    #reset total
+    #total += something
+    #something item_total_cost
+    pass
 
 #createing the receipt
 def create_receipt():
     print(receipt_txt)
     return receipt_txt
+
+#function that updates the running total on screen? do how you did it with update_inventroy list function in UI commansd
+def update_running_total_label():
+    pass
+
+    
 
 
 

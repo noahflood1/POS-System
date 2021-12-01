@@ -232,11 +232,14 @@ def mainWin(): #Defines UI in terms of a window with widgets
 
   #FIXME command for this button
   #Button to add an item's price to the total
+  #calls transaction.adddtocart( UI_commands2.getItemfromlist() )
+  #also calls function that upddates it on screen
   addButton = Button(transaction_frame, text='Add to Cart', font=button_font, command=lambda:UI_commands2.show_frame(main_frame), background="black", fg='white', height=2, width=10)
   addButton.pack()
 
   #FIXME command for this button 
   #Button to go through with the transaction
+  #calls clear_total and the feuctin that romves stuff from cart and sets tehri in_cart values to zero
   transaction_button = Button(transaction_frame, text='Confirm', font=button_font, command=lambda:UI_commands2.show_frame(main_frame), background="black", fg='white', height=2, width=10)
   transaction_button.pack()
 
