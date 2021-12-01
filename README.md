@@ -27,6 +27,8 @@ Future Updates:
 - Check balances
 - Actually take money and get customer info in an encrypted way
 - Create buttons to add items to cart
+- Transaction history screen
+- Track earnings by year/month/day
 
 ------------------------------------------------------------
 
