@@ -25,8 +25,9 @@ def addToCartList(item, amount):
     #change the item parameter's amount in cart value to "amount"
     #add that item to cartList
     yup = UI_commands2.getItemFromList(item)
-    yup.setCart(amount)
+    yup.setCart(int(amount))
     cartList.appent(yup)
+    update_running_total()
 
 def update_running_total():
     #for item in cartList
@@ -52,6 +53,8 @@ def update_running_total_label(string_var):
 
 #createing the receipt
 def create_receipt():
+    #write reciept_txt to file
+    #print to console as well
     print(receipt_txt)
     return receipt_txt
     
