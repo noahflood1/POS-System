@@ -31,6 +31,8 @@ Future Updates:
 - Transaction history screen
 - Track earnings by year/month/day
 - fix formatting of inventory list
+- Make it so stock is actually changed when people buy stuff
+- fix format of listbox inventory
 
 ------------------------------------------------------------
 

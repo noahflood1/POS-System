@@ -304,7 +304,7 @@ def mainWin(): #Defines UI in terms of a window with widgets
 
   #commands for the add button, all into one function for readability. everything here occurs when the user adds something to the cartLisst
   def addButton_commands():
-    Transaction.updateCartList(get_item_name(), get_item_amount()) #adds that new item to the cartList in Transaction based on entered items
+    Transaction.updateCartList(get_item_name(), get_item_amount()) #adds that new item to the cartList in Transaction based on entered items  
     Transaction.update_running_total_label(total_string) #updates the running total on screen
     clearTransactionEntries()  #clears entries last
 
