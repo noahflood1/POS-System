@@ -67,10 +67,11 @@ def updateFramedInventoryList(Listbox):
 class Item:
 
   #constructor method
-  def __init__(self, name, stock, price):
+  def __init__(self, name, stock, price, cart):
     self.name = name
     self.stock = stock
     self.price = price
+    self.cart = cart
     
   #change price of an item
   def changePrice(self, price):
