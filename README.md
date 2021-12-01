@@ -30,6 +30,7 @@ Future Updates:
 - Create buttons to add items to cart
 - Transaction history screen
 - Track earnings by year/month/day
+- fix formatting of inventory list
 
 ------------------------------------------------------------
 

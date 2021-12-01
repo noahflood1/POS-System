@@ -212,6 +212,56 @@ def mainWin(): #Defines UI in terms of a window with widgets
   delButton = Button(add_delete_frame, font=button_font, text='Delete', command=lambda:(UI_commands2.deleteFromInventoryList(del_entry.get()), UI_commands2.update_file(), clearDeleteEntry()), background="black", fg='white', height=2, width=10)
   delButton.pack()
 
+  #-----------------------------------------------------
+  #Restock Frame Code
+
+  #headder
+  restockHeader = Label(restock_frame, text='Restock', bg='#4dd2ff', fg='black', font=title_font)
+  restockHeader.pack(fill='x', ipady='10', pady='10')
+
+  #instructions for this page
+  restockInstructions =  Label(restock_frame, font=text_font_2, text='Enter necessary parameters to restock an item. Enter today\'s date to get the correct price.')
+  restockInstructions.pack()
+
+  #Labels and entry fields for restock
+  #I know it looks bad, but it works
+
+  restockLabel = Label(restock_frame, font=text_font_2, text='Item Name')
+  restockLabel.pack()
+  itemName = Entry(restock_frame, width=20)
+
+  quantityLabel = Label(restock_frame, font=text_font_2, text='Quantity of Item')
+  quantity = Entry(restock_frame, width=20)
+  dayLabel = Label(restock_frame, font=text_font_2, text='Day')
+  day = Entry(restock_frame, width=20)
+  monthLabel = Label(restock_frame, font=text_font_2, text='Month')
+  month= Entry(restock_frame, width=20)
+  yearLabel = Label(restock_frame, font=text_font_2, text='Year')
+  year= Entry(restock_frame, width=20)
+  itemName.pack()
+  quantityLabel.pack()
+  quantity.pack()
+  dayLabel.pack()
+  day.pack()
+  monthLabel.pack()
+  month.pack()
+  yearLabel.pack()
+  year.pack()
+
+  #function to clear entries for restock
+  def clearRestock():
+    itemName.delete(0, END)
+    quantity.delete(0, END)
+    month.delete(0, END)
+    year.delete(0, END)
+    day.delete(0, END)
+
+  #Quantity to restock
+   #restocks an item based off of 4 parameters
+  restockButton = Button(restock_frame, text='Restock Item', font=button_font, command=lambda:(UI_commands2.restock(itemName.get(),quantity.get(),month.get(),year.get(),day.get()), clearRestock() ), background="black", fg='white', height=2, width=10)
+  restockButton.pack()
+
+
   #----------------------------------------------------
   #transaction screen frame code
   transaction_header = Label(transaction_frame, text='Transaction', bg='#4dd2ff', fg='black', font=title_font)
@@ -266,56 +316,6 @@ def mainWin(): #Defines UI in terms of a window with widgets
   #calls clear_total and the function that removes all the items from cart and sets their in_cart values to zero
   transaction_button = Button(transaction_frame, text='Confirm', font=button_font, command=lambda:UI_commands2.show_frame(main_frame), background="black", fg='white', height=2, width=10)
   transaction_button.pack()
-
-
-  #-----------------------------------------------------
-  #Restock Frame Code
-
-  #headder
-  restockHeader = Label(restock_frame, text='Restock', bg='#4dd2ff', fg='black', font=title_font)
-  restockHeader.pack(fill='x', ipady='10', pady='10')
-
-  #instructions for this page
-  restockInstructions =  Label(restock_frame, font=text_font_2, text='Enter necessary parameters to restock an item. Enter today\'s date to get the correct price.')
-  restockInstructions.pack()
-
-  #Labels and entry fields for restock
-  #I know it looks bad, but it works
-
-  restockLabel = Label(restock_frame, font=text_font_2, text='Item Name')
-  restockLabel.pack()
-  itemName = Entry(restock_frame, width=20)
-
-  quantityLabel = Label(restock_frame, font=text_font_2, text='Quantity of Item')
-  quantity = Entry(restock_frame, width=20)
-  dayLabel = Label(restock_frame, font=text_font_2, text='Day')
-  day = Entry(restock_frame, width=20)
-  monthLabel = Label(restock_frame, font=text_font_2, text='Month')
-  month= Entry(restock_frame, width=20)
-  yearLabel = Label(restock_frame, font=text_font_2, text='Year')
-  year= Entry(restock_frame, width=20)
-  itemName.pack()
-  quantityLabel.pack()
-  quantity.pack()
-  dayLabel.pack()
-  day.pack()
-  monthLabel.pack()
-  month.pack()
-  yearLabel.pack()
-  year.pack()
-
-  #function to clear entries for restock
-  def clearRestock():
-    itemName.delete(0, END)
-    quantity.delete(0, END)
-    month.delete(0, END)
-    year.delete(0, END)
-    day.delete(0, END)
-
-  #Quantity to restock
-   #restocks an item based off of 4 parameters
-  restockButton = Button(restock_frame, text='Restock Item', font=button_font, command=lambda:(UI_commands2.restock(itemName.get(),quantity.get(),month.get(),year.get(),day.get()), clearRestock() ), background="black", fg='white', height=2, width=10)
-  restockButton.pack()
 
 
   #-----------------------------------------------------
