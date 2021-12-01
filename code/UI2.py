@@ -234,7 +234,7 @@ def mainWin(): #Defines UI in terms of a window with widgets
     item_name = itemEntry.get()
     amount_buying = amountEntry.get()
 
-    return item_name, amount_buying
+    return(item_name, amount_buying)
 
   def clearTransactionEntries():
     itemEntry.delete(0, END)
@@ -247,7 +247,12 @@ def mainWin(): #Defines UI in terms of a window with widgets
 
   #Button to add an item's price to the total
   addButton = Button(transaction_frame, text='Add to Cart', font=button_font, 
-    command=lambda:(Transaction.addToCartList(get_purchase_parameters()), Transaction.update_running_total_label(total_string), clearTransactionEntries()), background="black", fg='white', height=2, width=10)
+    command=lambda:(
+    Transaction.addToCartList(
+      get_purchase_parameters()),
+    Transaction.update_running_total_label(total_string), 
+    clearTransactionEntries()), 
+    background="black", fg='white', height=2, width=10)
   addButton.pack()
 
   #FIXME command for this button 
