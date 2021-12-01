@@ -67,7 +67,7 @@ def updateFramedInventoryList(Listbox):
 class Item:
 
   #constructor method
-  def __init__(self, name, stock, price, cart):
+  def __init__(self, name, stock, price, cart=0):
     self.name = name
     self.stock = stock
     self.price = price
