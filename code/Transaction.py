@@ -11,10 +11,19 @@ filepath = "files/reciept.txt"
 business_title = "Grandma's Bakery"
 business_phone = "256-420-6969"
 
+def setNum():
+    global receipt_num
+    f = open('files/num.txt','r')
+    receipt_num = int(f.read())
+    f.close()
+
+
+
 #variables for person using POS
 customer_name = "Customer"
 location = 'Auburn AL'
 receipt_num = 0
+setNum()
 receipt_header = str(receipt_num) + ' - ' + location
 
 #cart stuff
@@ -83,7 +92,7 @@ def update_running_total_label(string_var):
 #item_text = "{name:<15}{stock:<5}{price:>6}".format(name=item.name, stock=item.stock, price=item.price)
 def write_receipt():
     #Each line will be 42 Chars in total 
-    print(cartList)
+    #print(cartList)
     global receipt_txt
     global receipt_num
     receipt_txt = '='*42 + '\n'
@@ -107,10 +116,13 @@ def write_receipt():
     receipt_txt += "{a:<42}".format(a='Tender:') + '\n'
     receipt_txt += "{a:<21}{b:>21}".format(a='Debit',b='$'+str(round(subtotal+(subtotal*tax),2))) + '\n'
     receipt_txt += "{a:<42}".format(a='*'*12 + '8008') + '\n'
-    receipt_txt = '='*42 + '\n'
+    receipt_txt += '='*42 + '\n'
 
-    receipt_num += 1
-
+    receipt_num +=1
+    f = open('files/num.txt','w')
+    f.write(str(receipt_num))
+    f.close()
+    setNum()
     create_receipt()    
 
 #createing the receipt
