@@ -20,7 +20,7 @@ def mainWin(): #Defines UI in terms of a window with widgets
   #----------------------------------------------------
   #starts main window loop as "win"
   win=Tk() 
-  win.title('POS system')
+  win.title('POS System')
 
   #geometry of the main window
   window_height = 1024
