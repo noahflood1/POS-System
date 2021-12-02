@@ -12,6 +12,9 @@ description:
 This is a POS system that does stuff. See Trello for full function:
 https://trello.com/b/XSaQGrDe/engr-1110-team-lab-assignment
 
+presentation of the project:
+(link power point)
+
 Resources:
 Basic hexadecimal color picker: https://www.w3schools.com/colors/colors_picker.asp 
 Tkinter docs: https://rdbende.github.io/tkinter-docs/docs/# 
