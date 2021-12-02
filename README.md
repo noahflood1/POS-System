@@ -33,9 +33,9 @@ Future Updates:
 - Create buttons to add items to cart
 - Transaction history screen
 - Track earnings by year/month/day
-- fix formatting of inventory list
-- Make it so stock is actually changed when people buy stuff
+- change stock amounts when items are purchases
 - fix format of listbox inventory
+- add date/time to receipt
 
 ------------------------------------------------------------
 
