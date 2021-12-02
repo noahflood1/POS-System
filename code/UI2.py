@@ -81,9 +81,8 @@ def mainWin(): #Defines UI in terms of a window with widgets
   transaction_frame = Frame(win)
   restock_frame = Frame(win)
 
-  #FIXME: Add all new frames into this loop so that they exist in the window
   #They all exist on top of one another simultaneously, but only one is showing at a time (only one is on top at a time)
-  #TASKS DONE FOR ALL THE WINDOWS##############################
+  #Tasks done for all windows
   for frame in (main_frame, inventory_frame, add_delete_frame, stocks_frame, transaction_frame, restock_frame):
 
     frame.grid(row=0, column=0, stick='nsew') #does grid() to all these frames. only the last one grided shows; this is fixed with the function show_frame() below
