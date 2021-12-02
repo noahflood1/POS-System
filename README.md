@@ -4,9 +4,9 @@ authors:
 Head Developer: Noah Flood
 Head Developer: Jackson Scifres
 
-Dev Patel
-Scottie Davis
-Logan Killian
+Developer: Dev Patel
+Developer: Scottie Davis
+Developer: Logan Killian
 
 description:
 This is a POS system that does stuff. See Trello for full function:
