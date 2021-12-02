@@ -9,11 +9,13 @@ Developer: Scottie Davis
 Developer: Logan Killian
 
 description:
-This is a POS system that does stuff. See Trello for full function:
+POS System is a modular Point of Sale application that allows the user to store products in an inventory. Transactions can be processed to buy and sell items from the inventory. The infromation is stored in CSV files so that there can be saved-states of the program. The GUI is created using widgets with Tkinter.
+
+Trello assignments:
 https://trello.com/b/XSaQGrDe/engr-1110-team-lab-assignment
 
 presentation of the project:
-(link power point)
+https://www.youtube.com/watch?v=q8gHXvPUI8o&list=PLMESugISSHB9z8e2syFFcVFnk9g92ixgw&index=5
 
 Resources:
 Basic hexadecimal color picker: https://www.w3schools.com/colors/colors_picker.asp 
