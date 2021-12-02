@@ -23,7 +23,8 @@ def printInventoryList():
         print("{}\n".format(item.toString()))
         count+=1
 
-#function that instantiates and adds a new Item object to the inventoryList based on the three necessary parameters which are stored in a list
+# function that instantiates and adds a new Item object
+# to the inventoryList based on the three necessary parameters which are stored in a list
 def addToInventoryList(new_Item_paramaters):
     new_item = Item(new_Item_paramaters[0], new_Item_paramaters[1], new_Item_paramaters[2])
     inventoryList.append(new_item)

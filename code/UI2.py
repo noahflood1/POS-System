@@ -154,7 +154,7 @@ def mainWin(): #Defines UI in terms of a window with widgets
   print_inventory_button.place(x=800, y=100)
 
   #when the button is clicked, we update the list based upon the inventoryList list object
-  update_list_button = Button(inventory_frame, font=button_font, text="Update List", command=lambda:UI_commands2.updateFramedInventoryList(inventory_listbox), background="black", fg='white', height=2, width=10)
+  update_list_button = Button(inventory_frame, command=lambda:UI_commands2.updateFramedInventoryList(inventory_listbox), font=button_font, text="Update List", background="black", fg='white', height=2, width=10)
   update_list_button.place(x=800, y=160)
 
 
