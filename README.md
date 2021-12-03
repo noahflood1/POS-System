@@ -8,8 +8,7 @@ Developer: Dev Patel
 Developer: Scottie Davis  
 Developer: Logan Killian  
   
-------------------------------------------------------------  
-The current version's UI is meant to run on MacOS, so formatting may look different on Windows.
+The current version's UI is meant to run on MacOS, so formatting may look different on Windows.  
 ------------------------------------------------------------  
 Description  
 POS System is a modular Point of Sale application that allows the user to store products in an inventory. Transactions can be processed to buy and sell items from the inventory. The infromation is stored in CSV files so that there can be saved-states of the program. The GUI is created using widgets with Tkinter.  
