@@ -1,4 +1,4 @@
-# POS-System 2021   
+# Point of Sale System   
 
 Authors  
 Head Developer: Noah Flood  
