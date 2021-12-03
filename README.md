@@ -1,6 +1,6 @@
 # POS-System 2021   
 
-Authors 
+Authors  
 Head Developer: Noah Flood  
 Head Developer: Jackson Scifres  
   
@@ -41,5 +41,3 @@ Future Updates
 - add date/time to receipt  
 
 ------------------------------------------------------------
-
-To-do:
