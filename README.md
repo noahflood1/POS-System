@@ -10,10 +10,10 @@ Developer: Logan Killian
 
 
   
-Implementation
-
-Must manually run from IDE
-"Code" > "Download Zip" > Unpack Zip file > open folder in IDE of choice > run main.py
+Implementation  
+  
+Must manually run from IDE  
+"Code" > "Download Zip" > Unpack Zip file > open folder in IDE of choice > run main.py  
 
 The current version's UI is meant to run on MacOS, so formatting may look different on Windows.  
 ------------------------------------------------------------  
